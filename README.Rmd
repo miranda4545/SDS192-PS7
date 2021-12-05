@@ -1,0 +1,26 @@
+---
+title: "Problem Set 7"
+output: github_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Visualization
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(gapminder)
+```
+
+```{r, echo=FALSE}
+# 1. Recreate plot from PS02, but change default "color" palette of points:
+gapminder_2007 <- gapminder %>% 
+  filter(year == 2007)
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +
+  geom_point() +
+  scale_color_brewer(palette = "Dark2")
+```
